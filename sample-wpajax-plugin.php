@@ -29,17 +29,9 @@ define( 'SAMPLE_WPAJAX_FILE', __FILE__ );
 require_once 'php/autoloader.php';
 
 /**
- * Admin notice for incompatible versions of PHP.
- */
-function sample_wpajax_php_version_error() {
-	printf( '<div class="error"><p>%s</p></div>', esc_html( sample_wpajax_php_version_text() ) );
-}
-
-
-/**
  * Admin notice if User Profile Picture isn't an adequate version.
  */
-function sample_wpajax_upp_version_error() {
+function sample_wpajax_version_error() {
 	printf(
 		'<div class="error"><p>%s</p></div>',
 		esc_html__( 'Sample WPAjax requires a PHP version of 5.6 or above.', 'sample-wpajax-plugin' )
@@ -55,12 +47,12 @@ function sample_wpajax_upp_version_error() {
  * @return string
  */
 function sample_wpajax_php_version_text() {
-	return __( 'Sample WPAjax plugin error: Your version of PHP is too old to run this plugin. You must be running PHP 5.4 or higher.', 'user-profile-picture-enhanced' );
+	return __( 'Sample WPAjax plugin error: Your version of PHP is too old to run this plugin. You must be running PHP 5.4 or higher.', 'sample_wpajax_upp_version_error' );
 }
 
 // If the PHP version is too low, show warning and return.
-if ( version_compare( phpversion(), '5.4', '<' ) ) {
-	add_action( 'admin_notices', 'sample_wpajax_upp_version_error' );
+if ( version_compare( phpversion(), '5.6', '<' ) ) {
+	add_action( 'admin_notices', 'sample_wpajax_version_error' );
 	return;
 }
 
