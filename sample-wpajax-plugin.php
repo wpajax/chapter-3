@@ -2,7 +2,7 @@
 /**
  * Sample WPAJAX Plugin
  *
- * @package   Sample_WPAjax_Plugin 
+ * @package   Sample_WPAjax_Plugin
  * @copyright Copyright(c) 2019, MediaRon LLC
  * @license http://opensource.org/licenses/GPL-2.0 GNU General Public License, version 2 (GPL-2.0)
  *
@@ -67,13 +67,13 @@ if ( version_compare( phpversion(), '5.4', '<' ) ) {
 /**
  * Get the plugin object.
  *
- * @return \User_Profile_Picture_Enhanced\Plugin
+ * @return \Sample_WPAjax\Plugin
  */
-function user_profile_picture_enhanced() {
+function sample_wpajax() {
 	static $instance;
 
 	if ( null === $instance ) {
-		$instance = new \Sample_WPAjax\Plugin();
+		$instance = new \Sample_WPAjax_Plugin\Plugin();
 	}
 
 	return $instance;
@@ -97,8 +97,8 @@ add_action( 'plugins_loaded', array( sample_wpajax(), 'plugin_loaded' ), 20 );
 add_action( 'init', 'sample_wpajax_add_i18n' );
 
 /**
- * Add i18n to User Profile Picture Enhanced.
+ * Add i18n to Sample Plugin.
  */
-function user_profile_picture_enhanced_add_i18n() {
+function sample_wpajax_add_i18n() {
 	load_plugin_textdomain( 'sample-wpajax-plugin', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }

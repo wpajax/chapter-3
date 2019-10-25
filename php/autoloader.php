@@ -18,7 +18,7 @@ spl_autoload_register(
 		$class_trait = preg_match( '/Trait$/', $class ) ? 'trait-' : 'class-';
 
 		// If we're not in the plugin's namespace then just return.
-		if ( 'User_Profile_Picture_Enhanced' !== $root ) {
+		if ( 'Sample_WPAjax_Plugin' !== $root ) {
 			return;
 		}
 
