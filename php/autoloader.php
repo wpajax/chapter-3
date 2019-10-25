@@ -2,7 +2,7 @@
 /**
  * Plugin Autoloader
  *
- * @package   User_Profile_Picture_Enhanced
+ * @package   Sample_WPAjax_Plugin
  */
 
 /**
