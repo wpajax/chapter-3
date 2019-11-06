@@ -38,18 +38,6 @@ function sample_wpajax_version_error() {
 	);
 }
 
-/**
- * String describing the minimum PHP version.
- *
- * "Namespace" is a PHP 5.3 introduced feature. This is a hard requirement
- * for the plugin structure.
- *
- * @return string
- */
-function sample_wpajax_php_version_text() {
-	return __( 'Sample WPAjax plugin error: Your version of PHP is too old to run this plugin. You must be running PHP 5.4 or higher.', 'sample_wpajax_upp_version_error' );
-}
-
 // If the PHP version is too low, show warning and return.
 if ( version_compare( phpversion(), '5.6', '<' ) ) {
 	add_action( 'admin_notices', 'sample_wpajax_version_error' );
