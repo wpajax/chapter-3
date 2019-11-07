@@ -29,7 +29,7 @@ define( 'SAMPLE_WPAJAX_FILE', __FILE__ );
 require_once 'php/autoloader.php';
 
 /**
- * Admin notice if User Profile Picture isn't an adequate version.
+ * Admin notice if Sample WPAjax Plugin isn't an adequate version.
  */
 function sample_wpajax_version_error() {
 	printf(
